@@ -373,7 +373,7 @@ heartStart.addEventListener('click',function(){
   setTimeout(function(){
       console.log("尝试启动树...");
       var treeCanvas = document.getElementById('heart-tree');
-      if(treeCanVas){
+      if(treeCanvas){
           console.log("找到画布，尺寸：", treeCanvas.width, treeCanvas.height);
           window.startHeartTree();
       } else {
@@ -383,13 +383,17 @@ heartStart.addEventListener('click',function(){
 });
 
 var blessingEl=document.getElementById('blessing-text');
-if(blessingE1){
+if(blessingEl){
     blessingEl.style.transition='opacity 0.5s ease';
 }
 document.addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key===' '){
-     e.preventDefault();nextPage();
-     nextPage();
+     e.preventDefault();
+     if(typeof next=Page === 'function') {
+         nextPage();
+     } else {
+         console.error("nextPage 函数未定义");
+     }
   } else if (e.key === 'ArrowLeft' || e.key === ' ') {
       prevPage();
   }
