@@ -371,7 +371,14 @@ heartStart.addEventListener('click',function(){
   },2000);
 
   setTimeout(function(){
-    window.startHeartTree();
+      console.log(尝试启动树...");
+      var treeCanvas = document.getElementById('heart-tree');
+      if(treeCanVas){
+          console.log("找到画布，尺寸：", treeCanvas.width, treeCanvas.height);
+          window.startHeartTree();
+      } else {
+          console.error("找不到 heart-tree 元素! ");
+     }
   },500);
 });
 
