@@ -389,7 +389,7 @@ if(blessingEl){
 document.addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key===' '){
      e.preventDefault();
-     if(typeof next=Page === 'function') {
+     if(typeof nextPage === 'function') {
          nextPage();
      } else {
          console.error("nextPage 函数未定义");
